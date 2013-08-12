@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!-- foo bar  -->
+
 <html>
 <head>
 	<title>Treebook</title>
@@ -12,14 +15,16 @@
 			<div class="container">
 				<a class="brand" href="#">Treebook</a>
 				<ul class="nav">
-				<li> <%= link_to "All Statuses", statuses_path %> </li>
+					<li> <%= link_to "All Statuses", statuses_path %> </li>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<%= yield %>
+		<div class="container">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+			<%= yield %>
 
-	</div>
-</body>
+		</div>
+	</body>
 
-</html>
+	</html>
