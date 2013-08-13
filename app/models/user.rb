@@ -10,5 +10,15 @@ class User < ActiveRecord::Base
   def full_name 
       first_name + " " +last_name
   end
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :profile_name, presence: true,
+                           uniqueness: true,
+                           format: {
+                            with: /[a-z]*/,
+                            message: 'Must be formatted correctly.'
+                           }
+
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :profile_name
 end
